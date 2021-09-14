@@ -30,11 +30,20 @@ const showProducts = (products) => {
       <button onclick="addToCart(${product.price})" id="addToCart-btn" class="buy-now"><i class="fas fa-cart-plus"></i> Add to cart </button>
 
 
-      <button id="details-btn" class="btn-details">Details<i class="fas mx-1 fa-info-circle"></i></button></div>
+      <button onclick="alertFunction()" id="details-btn" class="btn-details">Details<i class="fas mx-1 fa-info-circle"></i> </button>
+      
+    </div>
       `;
+      
     document.getElementById("all-products").appendChild(div);
   }
 };
+
+var name = "Programming Hero";
+
+function alertFunction() {
+  alert('Hello ' + name);
+}
 
 let count = 0;
 const addToCart = (price) => {
@@ -88,5 +97,8 @@ const updateTotal = () => {
     getInputValue("total-tax");
   document.getElementById("total").innerText = grandTotal.toFixed(2);
 };
+
+
 // updateTotal();
 loadProducts();
+
